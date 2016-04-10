@@ -11,22 +11,58 @@
 **		 -Woodcutter			**
 *************************************************/
 
-struct Smithy
+int Smithy(int currentPlayer, int handPos, struct gameState state)
 {
-};
+	// + 3 cards
+	for(int i = 0; i < 3; i++)
+	{
+		drawCard(currentPlayer, state);
+	}
+	//discard card from hand
+	discardCard(handPos, currentPlayer, state, 0);
+	// return value is the value of getCost
+	return 4;
+}
 
-struct Adventurer
+int Adventurer(int currentPlayer, int handPos, struct gameState state)
 {
-};
+	int drawntreasure = 0;
+	int cardDrawn;
+	int z =0;
+	while(drawntreasure < 2)
+	{
+		if (state->deckCount[currentPlayer] <1)
+		{
+			shuffle(currentPlayer, state);
+		}
+		drawCard(currentPlayer, state);
+		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];
+		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+		{
+			drawntreasure++;
+		}else{
+			temphand[z]=cardDrawn;
+			state->handCount[currentPlayer]--;
+			z++;
+		}
+	}
+	while(z-1>=0)
+	{
+		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1];
+		z=z-1;
+	}
+	//return value is the value of getCost()
+	return 6;
+}
 
-struct Workshop
+int Workshop
 {
-};
+}
 
-struct Village
+int Village
 {
-};
+}
 
-struct Woodcutter
+int Woodcutter
 {
-};
+}
