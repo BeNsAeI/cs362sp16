@@ -11,6 +11,10 @@
 **		 -Woodcutter			**
 *************************************************/
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "dominion.c"
+
 int Smithy(int currentPlayer, int handPos, struct gameState state)
 {
 	// + 3 cards
@@ -57,12 +61,15 @@ int Adventurer(int currentPlayer, int handPos, struct gameState state)
 
 int Workshop
 {
+	
 }
 
 int Village
 {
+	
 }
 
 int Woodcutter
 {
+	
 }
