@@ -6,8 +6,27 @@
 **	       cards selected:			**
 **		 -Smithy			**
 **		 -Adventurer			**
-**		 -				**
-**		 -				**
-**		 -				**
+**		 -Workshop			**
+**		 -Village			**
+**		 -Woodcutter			**
 *************************************************/
 
+struct Smithy
+{
+};
+
+struct Adventurer
+{
+};
+
+struct Workshop
+{
+};
+
+struct Village
+{
+};
+
+struct Woodcutter
+{
+};
