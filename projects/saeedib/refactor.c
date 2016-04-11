@@ -64,12 +64,19 @@ int Workshop
 	
 }
 
-int Village
+int Village(int currentPlayer, int handPos, struct gameState state)
 {
-	
+	//+1 Card
+	drawCard(currentPlayer, state);
+	//+2 Actions
+	state->numActions = state->numActions + 2;
+	//discard played card from hand
+	discardCard(handPos, currentPlayer, state, 0);
+	return 3;
 }
 
-int Woodcutter
+int Woodcutter(int currentPlayer, int handPos, struct gameState state)
 {
 	
+	return 0;
 }
