@@ -6,7 +6,7 @@
 **	       cards selected:			**
 **		 -Smithy			**
 **		 -Adventurer			**
-**		 -Workshop			**
+**		 -Feast				**
 **		 -Village			**
 **		 -Woodcutter			**
 *************************************************/
@@ -59,9 +59,9 @@ int Adventurer(int currentPlayer, int handPos, struct gameState state)
 	return 6;
 }
 
-int Workshop
+int Feast(int currentPlayer, int handPos, struct gameState state)
 {
-	
+	return 4;
 }
 
 int Village(int currentPlayer, int handPos, struct gameState state)
