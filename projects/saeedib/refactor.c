@@ -21,7 +21,7 @@
 // - Wrong pointer and variable handling (these bugs are where we need to pass by refrence)
 
 // Each function has atleast 1 bug
-// The functions are listed bellow, (infact this exact file is attached to dominion to compile):
+// The functions are listed bellow (pay attention *** for bugs):
 
 #include "dominion.h"
 #include "dominion_helpers.h"
@@ -103,7 +103,7 @@ int Feast(int currentPlayer, int handPos, struct gameState * state, int * tempha
 	for (int i = 0; i <= state->handCount[currentPlayer]; i++)
 	{
 		state->hand[currentPlayer][i] = temphand[i];
-		temphand[i] = 0; // wrong value! -1
+		temphand[i] = 0; //*** wrong value! -1
 	}
 	//Reset Hand
 	return 4;
@@ -114,7 +114,7 @@ int Village(int currentPlayer, int handPos, struct gameState * state)
 	//+1 Card
 	drawCard(currentPlayer, state);
 	//+2 Actions
-	state->numActions = state->numActions + 1; // action won't increase by  2
+	state->numActions = state->numActions + 1; //*** action won't increase by  2
 	//discard played card from hand
 	discardCard(handPos, currentPlayer, state, 0);
 	return 3;
