@@ -1,25 +1,27 @@
 /*************************************************
-**		Behnam Saeedi			**
-**		   Saeedib			**
-**		 932-217-697			**
-**		 refactor.c			**
-**	       cards selected:			**
-**		 -Smithy			**
-**		 -Adventurer			**
-**		 -Feast				**
-**		 -Village			**
-**		 -minion			**
+**		  Behnam Saeedi			**
+**		     Saeedib			**
+**		   932-217-697			**
+**	  	   refactor.c			**
+**	         cards selected:		**
+**		   -Smithy			**
+**		   -Adventurer			**
+**		   -Feast			**
+**		   -Village			**
+**		   -minion			**
 *************************************************/
-
+/*		   DESCRIBTION:			*/
 // switch cases are replaced with Functions in cardEffect
 // The arguments are passed and tested
 // The program seems to be compiling
 // There are bugs in the code
+
 // Bug types are:
-// - Wrong numbers pass
-// - Wrong pointer and variable handling
-// There are hints helping with the bugs
+// - Wrong numbers pass (These bugs are commented with tripple star: //***)
+// - Wrong pointer and variable handling (these bugs are where we need to pass by refrence)
+
 // Each function has atleast 1 bug
+// The functions are listed bellow, (infact this exact file is attached to dominion to compile):
 
 #include "dominion.h"
 #include "dominion_helpers.h"
