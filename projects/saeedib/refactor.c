@@ -59,7 +59,7 @@ int Adventurer(int currentPlayer, int handPos, struct gameState state)
 	return 6;
 }
 
-int Feast(int currentPlayer, int handPos, struct gameState state)
+int Feast(int currentPlayer, int handPos, struct gameState state, int * temphand)
 {
 	//Backup hand
 	for (i = 0; i <= state->handCount[currentPlayer]; i++)
