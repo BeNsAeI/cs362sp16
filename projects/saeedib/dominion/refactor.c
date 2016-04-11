@@ -19,7 +19,7 @@
 #include <stdlib.h>
 #include "dominion.c"
 
-int Smithy(int currentPlayer, int handPos, struct gameState state)
+int Smithy(int currentPlayer, int handPos, struct gameState * state)
 {
 	// + 3 cards
 	for(int i = 0; i < 3; i++)
@@ -32,7 +32,7 @@ int Smithy(int currentPlayer, int handPos, struct gameState state)
 	return 4;
 }
 
-int Adventurer(int currentPlayer, int handPos, struct gameState state)
+int Adventurer(int currentPlayer, int handPos, struct gameState * state,int * temphand)
 {
 	int drawntreasure = 0;
 	int cardDrawn;
@@ -63,10 +63,11 @@ int Adventurer(int currentPlayer, int handPos, struct gameState state)
 	return 6;
 }
 
-int Feast(int currentPlayer, int handPos, struct gameState state, int * temphand)
+int Feast(int currentPlayer, int handPos, struct gameState * state, int * temphand, int choice1)
 {
+	int x;
 	//Backup hand
-	for (i = 0; i <= state->handCount[currentPlayer]; i++)
+	for (int i = 0; i <= state->handCount[currentPlayer]; i++)
 	{
 		temphand[i] = state->hand[currentPlayer][i];//Backup card
 		state->hand[currentPlayer][i] = -1;//Set to nothing
@@ -88,7 +89,7 @@ int Feast(int currentPlayer, int handPos, struct gameState state, int * temphand
 		}
 	}
 	//Reset Hand
-	for (i = 0; i <= state->handCount[currentPlayer]; i++)
+	for (int i = 0; i <= state->handCount[currentPlayer]; i++)
 	{
 		state->hand[currentPlayer][i] = temphand[i];
 		temphand[i] = -1;
@@ -97,7 +98,7 @@ int Feast(int currentPlayer, int handPos, struct gameState state, int * temphand
 	return 4;
 }
 
-int Village(int currentPlayer, int handPos, struct gameState state)
+int Village(int currentPlayer, int handPos, struct gameState * state)
 {
 	//+1 Card
 	drawCard(currentPlayer, state);
@@ -108,7 +109,7 @@ int Village(int currentPlayer, int handPos, struct gameState state)
 	return 3;
 }
 
-int Minion(int currentPlayer, int handPos, struct gameState state,int choice1)
+int Minion(int currentPlayer, int handPos, struct gameState * state, int choice1, int choice2)
 {
 	//+1 action
 	state->numActions++;
@@ -127,12 +128,12 @@ int Minion(int currentPlayer, int handPos, struct gameState state,int choice1)
 			discardCard(handPos, currentPlayer, state, 0);
 		}
 		//draw 4
-		for (i = 0; i < 4; i++)
+		for (int i = 0; i < 4; i++)
 		{
 			drawCard(currentPlayer, state);
 		}
 		//other players discard hand and redraw if hand size > 4
-		for (i = 0; i < state->numPlayers; i++)
+		for (int i = 0; i < state->numPlayers; i++)
 		{
 			if (i != currentPlayer)
 			{
@@ -144,7 +145,7 @@ int Minion(int currentPlayer, int handPos, struct gameState state,int choice1)
 						discardCard(handPos, i, state, 0);
 					}
 					//draw 4
-					for (j = 0; j < 4; j++)
+					for (int j = 0; j < 4; j++)
 					{
 						drawCard(i, state);
 					}
