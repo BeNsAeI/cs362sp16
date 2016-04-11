@@ -8,7 +8,7 @@
 **		 -Adventurer			**
 **		 -Feast				**
 **		 -Village			**
-**		 -Woodcutter			**
+**		 -minion			**
 *************************************************/
 
 #include <stdio.h>
@@ -104,7 +104,7 @@ int Village(int currentPlayer, int handPos, struct gameState state)
 	return 3;
 }
 
-int Woodcutter(int currentPlayer, int handPos, struct gameState state)
+int Minion(int currentPlayer, int handPos, struct gameState state)
 {
 	
 	return 0;
