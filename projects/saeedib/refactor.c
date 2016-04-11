@@ -71,7 +71,7 @@ int Feast(int currentPlayer, int handPos, struct gameState state, int * temphand
 	//Update Coins for Buy
 	updateCoins(currentPlayer, state, 5);
 	x = 1;//Condition to loop on
-	while( x == 1) 
+	while( x == 1)
 	{
 		if (state->coins < getCost(choice1))
 		{
@@ -82,7 +82,7 @@ int Feast(int currentPlayer, int handPos, struct gameState state, int * temphand
 			gainCard(choice1, state, 0, currentPlayer);//Gain the card
 			x = 0;//No more buying cards
 		}
-	}     
+	}
 	//Reset Hand
 	for (i = 0; i <= state->handCount[currentPlayer]; i++)
 	{
