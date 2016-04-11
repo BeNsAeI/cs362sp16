@@ -36,7 +36,7 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 test:
-	gcc test.c -o out.out
+	gcc test.c -o out.out $(CFLAGS)
 	./out.out
 
 clean:

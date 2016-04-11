@@ -17,7 +17,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "dominion.c"
 
 int Smithy(int currentPlayer, int handPos, struct gameState * state)
 {
